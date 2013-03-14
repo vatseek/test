@@ -36,8 +36,6 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		// uncomment the following to enable URLs in path-format
-		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -45,21 +43,15 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
+            'showScriptName' => false,
 		),
-		*/
-		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
-		// uncomment the following to use a MySQL database
-		/*
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
 			'emulatePrepare' => true,
-			'username' => 'root',
+			'username' => 'user',
 			'password' => '',
 			'charset' => 'utf8',
 		),
-		*/
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
@@ -72,13 +64,15 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
 				array(
 					'class'=>'CWebLogRoute',
+				    'categories' => 'application',
+                    'levels'=>'error, warning, trace, profile, info',
+                    'showInFireBug' => true,
 				),
-				*/
 			),
 		),
+        'enabled'=>true,
 	),
 
 	// application-level parameters that can be accessed
