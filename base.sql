@@ -22,6 +22,7 @@ CREATE TABLE `user` (
   `profile_date` datetime DEFAULT NULL,
   `profile_avatar` varchar(250) DEFAULT NULL,
   `profile_foto` varchar(250) DEFAULT NULL,
+  `role` varchar(250) DEFAULT 'user',
   PRIMARY KEY (`id`),
   UNIQUE KEY `login` (`login`),
   UNIQUE KEY `mail` (`mail`),
